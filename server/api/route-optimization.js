@@ -46,7 +46,7 @@ const model = {
 export default defineEventHandler(async () => {
   return mock;
 
-  // 以下は一旦省略
+  // 基本はmockから呼び出します。必要な場合はモックをコメントアウトしてください。
   const config = useRuntimeConfig();
   const response = await routeOptimizationClient.optimizeTours({
     parent: `projects/${config.googleProjectKey}`,

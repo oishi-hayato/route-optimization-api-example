@@ -42,11 +42,12 @@ async function initMap() {
   });
 
   // 車両ごとのデータに分かれていると思われるため本当はよくないが、サンプルのため一次元配列として扱う
-  polylineGroupList.flat().forEach((polylineData) => {
+  polylineGroupList.flat().forEach((polylineData, index) => {
+    const color = index === 0 ? "#FF0000" : "#07365B";
     const polyline = new google.maps.Polyline({
       path: polylineData,
       geodesic: true,
-      strokeColor: "#FF0000",
+      strokeColor: color,
       strokeOpacity: 1.0,
       strokeWeight: 4,
     });
